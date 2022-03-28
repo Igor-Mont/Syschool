@@ -1,16 +1,6 @@
+import { ICreateEmployeeDTO } from '../../src/core/modules/employee/dtos/ICreateEmployee';
 import { IEmployeesRepository } from '../../src/core/modules/repositories/IEmployeesRepository';
 import { Employee } from '../../src/domain/entities/Employee';
-
-type Office = 'cargo1' | 'cargo2' | 'cargo3';
-type Gender = 'F' | 'M' | 'O';
-
-interface EmployeeProps {
-  name: string;
-  office: Office;
-  gender: Gender;
-  birth_date: Date;
-  created_at?: Date;
-}
 
 class InMemoryEmployeesRepository implements IEmployeesRepository {
   public employees: Employee[] = [];
@@ -20,7 +10,7 @@ class InMemoryEmployeesRepository implements IEmployeesRepository {
     office,
     gender,
     birth_date,
-  }: EmployeeProps): Promise<Employee> {
+  }: ICreateEmployeeDTO): Promise<Employee> {
     const employee = Employee.create({
       name,
       office,

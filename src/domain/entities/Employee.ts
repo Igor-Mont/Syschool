@@ -1,18 +1,8 @@
 import { Entity } from '../../core/domain/Entity';
+import { ICreateEmployeeDTO } from '../../core/modules/employee/dtos/ICreateEmployee';
 
-type Office = 'cargo1' | 'cargo2' | 'cargo3';
-type Gender = 'F' | 'M' | 'O';
-
-interface EmployeeProps {
-  name: string;
-  office: Office;
-  gender: Gender;
-  birth_date: Date;
-  created_at?: Date;
-}
-
-class Employee extends Entity<EmployeeProps> {
-  private constructor(props: EmployeeProps, _id?: string) {
+class Employee extends Entity<ICreateEmployeeDTO> {
+  private constructor(props: ICreateEmployeeDTO, _id?: string) {
     super(props, _id);
   }
 
@@ -20,7 +10,7 @@ class Employee extends Entity<EmployeeProps> {
     return this._id;
   }
 
-  static create(props: EmployeeProps, _id?: string) {
+  static create(props: ICreateEmployeeDTO, _id?: string) {
     const employee = new Employee(
       {
         ...props,

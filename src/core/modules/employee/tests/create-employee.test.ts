@@ -9,7 +9,7 @@ describe('Create employee use case', () => {
 
     const response = await sut.execute({
       name: 'user-test',
-      office: 'cargo1',
+      office: 'office1',
       gender: 'M',
       birth_date: new Date(),
     });

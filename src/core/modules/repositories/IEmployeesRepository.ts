@@ -1,15 +1,7 @@
+import { Gender } from '../../../../@types/Gender';
+import { Office } from '../../../../@types/Office';
 import { Employee } from '../../../domain/entities/Employee';
-
-type Office = 'cargo1' | 'cargo2' | 'cargo3';
-type Gender = 'F' | 'M' | 'O';
-
-interface EmployeeProps {
-  name: string;
-  office: Office;
-  gender: Gender;
-  birth_date: Date;
-  created_at?: Date;
-}
+import { ICreateEmployeeDTO } from '../employee/dtos/ICreateEmployee';
 
 interface IEmployeesRepository {
   create({
@@ -17,7 +9,7 @@ interface IEmployeesRepository {
     office,
     gender,
     birth_date,
-  }: EmployeeProps): Promise<Employee>;
+  }: ICreateEmployeeDTO): Promise<Employee>;
   findById(id: string): Promise<Employee | null>;
 }
 
