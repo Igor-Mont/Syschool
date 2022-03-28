@@ -5,6 +5,7 @@ interface ICreateEmployeeDTO {
   name: string;
   office: Office;
   gender: Gender;
+  staff?: boolean;
   birth_date: Date;
   created_at?: Date;
 }

@@ -9,6 +9,7 @@ class InMemoryEmployeesRepository implements IEmployeesRepository {
     name,
     office,
     gender,
+    staff,
     birth_date,
   }: ICreateEmployeeDTO): Promise<Employee> {
     const employee = Employee.create({
@@ -16,6 +17,7 @@ class InMemoryEmployeesRepository implements IEmployeesRepository {
       office,
       gender,
       birth_date,
+      staff: true,
     });
 
     return employee;
