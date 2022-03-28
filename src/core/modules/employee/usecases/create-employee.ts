@@ -1,6 +1,3 @@
-import { Gender } from '../../../../../@types/Gender';
-import { Office } from '../../../../../@types/Office';
-import { Employee } from '../../../../domain/entities/Employee';
 import { IEmployeesRepository } from '../../repositories/IEmployeesRepository';
 import { ICreateEmployeeDTO } from '../dtos/ICreateEmployee';
 
